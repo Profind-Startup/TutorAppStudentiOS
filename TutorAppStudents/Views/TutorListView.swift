@@ -12,7 +12,7 @@ struct TutorRow: View {
   var tutor: TutorViewModel
   
   var body: some View {
-    Text(tutor.academic_group_name)
+    Text(tutor.academic_group_address)
   }
 }
 

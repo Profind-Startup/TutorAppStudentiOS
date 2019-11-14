@@ -19,7 +19,7 @@ struct TutorViewModel: Identifiable {
     self.tutor = tutor
   }
 
-    var id_subject: Int {
+    var id_tutor: Int {
         return self.tutor.id
     }
     
@@ -31,8 +31,8 @@ struct TutorViewModel: Identifiable {
     return self.tutor.academic_group_name
   }
   
-  var id_academic_group_foundation_datetutor: String {
-    return self.tutor.id_academic_group_foundation_datetutor
+  var academic_group_foundation_date: String {
+    return self.tutor.academic_group_foundation_date
   }
   
     var academic_group_address: String {
