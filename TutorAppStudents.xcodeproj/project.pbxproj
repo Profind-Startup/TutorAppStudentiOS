@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF7EB26523876BB1003CAAD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7EB26423876BB1003CAAD2 /* User.swift */; };
+		DF7EB26723876BF2003CAAD2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7EB26623876BF2003CAAD2 /* Student.swift */; };
 		DF88C16C23798039008DABF7 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF88C16B23798039008DABF7 /* Tutor.swift */; };
 		DF88C16E2379825F008DABF7 /* TutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF88C16D2379825F008DABF7 /* TutorViewModel.swift */; };
 		DF88C17023798345008DABF7 /* TutorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF88C16F23798345008DABF7 /* TutorListViewModel.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF7EB26423876BB1003CAAD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DF7EB26623876BF2003CAAD2 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DF88C16B23798039008DABF7 /* Tutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		DF88C16D2379825F008DABF7 /* TutorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorViewModel.swift; sourceTree = "<group>"; };
 		DF88C16F23798345008DABF7 /* TutorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorListViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				DF88C16B23798039008DABF7 /* Tutor.swift */,
+				DF7EB26423876BB1003CAAD2 /* User.swift */,
+				DF7EB26623876BF2003CAAD2 /* Student.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,8 +323,10 @@
 				DF88C16C23798039008DABF7 /* Tutor.swift in Sources */,
 				DFCE16F0236E2CAF00CDBAB8 /* AppDelegate.swift in Sources */,
 				DF88C17023798345008DABF7 /* TutorListViewModel.swift in Sources */,
+				DF7EB26723876BF2003CAAD2 /* Student.swift in Sources */,
 				DF88C17423798571008DABF7 /* TutorListView.swift in Sources */,
 				DF88C16E2379825F008DABF7 /* TutorViewModel.swift in Sources */,
+				DF7EB26523876BB1003CAAD2 /* User.swift in Sources */,
 				DFCE16F2236E2CAF00CDBAB8 /* SceneDelegate.swift in Sources */,
 				DFCE16F4236E2CAF00CDBAB8 /* ContentView.swift in Sources */,
 				DF88C172237984C7008DABF7 /* TutorAppService.swift in Sources */,

@@ -24,6 +24,9 @@ class TutorAppService {
       
       
       let tutors = try? JSONDecoder().decode([Tutor].self, from: data)
+        
+    
+        
       DispatchQueue.main.async {
         completion(tutors)
       }

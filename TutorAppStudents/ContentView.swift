@@ -8,6 +8,67 @@
 
 import SwiftUI
 
+var check = false
+func checkStudent(user_id: Int) {
+    
+    guard let url = URL(string: "http://tutorapp.somee.com/api/Users/" + String(user_id) + "/Student") else
+       {
+return
+         
+     }
+  
+     
+     URLSession.shared.dataTask(with: url){ (data, response, error) in
+         print(data)
+         
+         let student = try? JSONDecoder().decode(Student.self, from: data!)
+         DispatchQueue.main.async {
+          //  UserDefaults.standard.set(user.id, forKey: "user_id")
+            if(student != nil)
+            {
+                print(student?.user_id)
+             UserDefaults.standard.set(String(student!.id), forKey: "tutor_id")
+                check = true
+            }
+         }
+     }.resume()
+   
+ }
+
+func checkDetails(username: String, password: String){
+    
+     guard let url = URL(string: "http://tutorapp.somee.com/api/users/check") else
+        {
+ return
+          
+      }
+      let body: [String: String] = ["address": "","password": password,"id": "0","last_names":"","username": username, "names":""]
+      
+      let finalBody = try! JSONSerialization.data(withJSONObject: body)
+      
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.httpBody = finalBody
+      
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      URLSession.shared.dataTask(with: request){ (data, response, error) in
+          print(data)
+          
+          let user = try? JSONDecoder().decode(User.self, from: data!)
+          DispatchQueue.main.async {
+           //  UserDefaults.standard.set(user.id, forKey: "user_id")
+              print(user?.names)
+              if(user != nil)
+              {
+              UserDefaults.standard.set(String(user!.id), forKey: "user_id")
+             
+              checkStudent(user_id: user!.id)
+               
+              }
+          }
+      }.resume()
+   
+  }
 struct ContentView: View {
     
     @State var username: String = ""
@@ -174,7 +235,16 @@ struct ContentView: View {
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
             
-            Button(action: {self.view = "Home"}) {
+            Button(action: {
+                
+                checkDetails(username :self.username, password :self.password)
+                
+                if(check)
+                {
+                self.view = "Home"
+                }
+                
+            }) {
             LoginButtonContent()
             }
             NavigationLink(destination: UserRegister()) {
